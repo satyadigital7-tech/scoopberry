@@ -173,15 +173,15 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, onQuickView }
       </div>
 
       {/* Pricing & Add to Cart */}
-      <div className="mt-3 pt-2.5 border-t border-[#FFF8F2] flex items-center justify-between gap-2">
-        <div className="flex items-baseline gap-1.5 flex-wrap">
-          <span className="font-heading font-bold text-base text-[#54281F]">
+      <div className="mt-3 pt-2.5 border-t border-gray-100 flex items-center justify-between gap-1.5 flex-wrap sm:flex-nowrap">
+        <div className="flex items-baseline gap-1 flex-wrap">
+          <span className="font-heading font-bold text-sm sm:text-base text-[#54281F]">
             ₹{product.price}
           </span>
           {product.mrp > product.price && (
             <>
-              <span className="text-xs text-gray-400 line-through">₹{product.mrp}</span>
-              <span className="text-[10px] font-bold text-[#E52F4F] bg-[#FFE5D9] px-1.5 py-0.5 rounded-md">
+              <span className="text-[10px] sm:text-xs text-gray-400 line-through">₹{product.mrp}</span>
+              <span className="text-[9px] sm:text-[10px] font-bold text-[#E52F4F] bg-[#FFE5D9] px-1 py-0.5 rounded-md hidden xs:inline">
                 {product.discount}% OFF
               </span>
             </>
@@ -191,16 +191,16 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, onQuickView }
         <button
           onClick={handleAddToCart}
           disabled={isOutOfStock}
-          className={`px-3 py-1.5 rounded-2xl text-xs font-semibold flex items-center gap-1.5 transition-all duration-300 ${
+          className={`px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-xl sm:rounded-2xl text-[11px] sm:text-xs font-semibold flex items-center gap-1 transition-all duration-300 shrink-0 ${
             isOutOfStock
               ? 'bg-gray-200 text-gray-400 cursor-not-allowed'
               : isAdded
               ? 'bg-[#4E8B3A] text-white scale-95 shadow-md'
-              : 'bg-[#E83E68] hover:bg-[#d63059] text-white active:scale-95 shadow-sm hover:shadow'
+              : 'bg-[#E83E68] hover:bg-[#d63059] text-white active:scale-95 shadow-xs hover:shadow'
           }`}
           aria-label="Add to cart"
         >
-          <ShoppingBag className="w-3.5 h-3.5" />
+          <ShoppingBag className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
           <span>{isAdded ? 'Added! 🍓' : 'Add'}</span>
         </button>
       </div>

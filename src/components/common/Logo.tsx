@@ -65,7 +65,7 @@ export const Logo: React.FC<LogoProps> = ({
             <span
               className={`font-sans tracking-wide font-medium mt-1 ${taglineSizes[size]} ${
                 isWhite ? 'text-pink-100' : 'text-[#8C6A64]'
-              }`}
+              } hidden sm:block`}
             >
               Little Scoops. Big Surprises.
             </span>

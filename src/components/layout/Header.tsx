@@ -102,21 +102,21 @@ export const Header: React.FC = () => {
     <header className="sticky top-0 z-40 bg-white border-b border-[#F6A6B8]/30 shadow-xs transition-all duration-300">
       {/* Top Announcement Bar */}
       {settings?.showAnnouncementBar && (
-        <div className="bg-[#E83E68] text-white py-1.5 px-4 text-center text-xs font-semibold tracking-wide flex items-center justify-center gap-2">
+        <div className="bg-[#E83E68] text-white py-1.5 px-3 text-center text-[11px] sm:text-xs font-semibold tracking-wide flex items-center justify-center gap-1.5 break-words">
           <span>{settings.announcementBarText}</span>
         </div>
       )}
 
       {/* Main Navigation Bar */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
+      <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between gap-2 sm:gap-4">
         {/* Mobile Left: Hamburger */}
         <div className="flex items-center lg:hidden">
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="p-2 -ml-2 rounded-2xl text-[#54281F] hover:bg-[#FFF8F2] focus:outline-none transition-colors"
+            className="p-1.5 sm:p-2 -ml-1 sm:-ml-2 rounded-2xl text-[#54281F] hover:bg-[#FFF8F2] focus:outline-none transition-colors"
             aria-label="Toggle navigation menu"
           >
-            {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {isMobileMenuOpen ? <X className="w-5 h-5 sm:w-6 sm:h-6" /> : <Menu className="w-5 h-5 sm:w-6 sm:h-6" />}
           </button>
         </div>
 
@@ -154,11 +154,11 @@ export const Header: React.FC = () => {
         </nav>
 
         {/* Right Action Icons: Search, Wishlist, Account, Cart */}
-        <div className="flex items-center gap-2 sm:gap-4">
+        <div className="flex items-center gap-1 sm:gap-3">
           {/* Search Trigger */}
           <button
             onClick={() => setIsSearchOpen(true)}
-            className="p-2.5 rounded-2xl text-[#54281F] hover:bg-[#FFF8F2] hover:text-[#E83E68] transition-colors"
+            className="p-2 sm:p-2.5 rounded-2xl text-[#54281F] hover:bg-[#FFF8F2] hover:text-[#E83E68] transition-colors"
             aria-label="Open search"
           >
             <Search className="w-5 h-5" />
@@ -167,7 +167,7 @@ export const Header: React.FC = () => {
           {/* Wishlist Link (Desktop & Mobile) */}
           <Link
             href="/wishlist"
-            className="relative p-2.5 rounded-2xl text-[#54281F] hover:bg-[#FFF8F2] hover:text-[#E83E68] transition-colors hidden sm:flex items-center justify-center"
+            className="relative p-2 sm:p-2.5 rounded-2xl text-[#54281F] hover:bg-[#FFF8F2] hover:text-[#E83E68] transition-colors hidden sm:flex items-center justify-center"
             aria-label="Wishlist"
           >
             <Heart className="w-5 h-5" />
@@ -182,7 +182,7 @@ export const Header: React.FC = () => {
           <div className="relative">
             <button
               onClick={() => setIsUserMenuOpen(!isUserMenuOpen)}
-              className="p-2.5 rounded-2xl text-[#54281F] hover:bg-[#FFF8F2] hover:text-[#E83E68] transition-colors flex items-center justify-center"
+              className="p-2 sm:p-2.5 rounded-2xl text-[#54281F] hover:bg-[#FFF8F2] hover:text-[#E83E68] transition-colors flex items-center justify-center"
               aria-label="User account"
             >
               <User className="w-5 h-5" />

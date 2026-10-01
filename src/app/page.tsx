@@ -140,19 +140,19 @@ export default function HomePage() {
               </div>
 
               {/* Clear Floating Badges */}
-              <div className="absolute -top-3 -left-3 bg-white/95 backdrop-blur-md p-3 rounded-2xl shadow-lg border border-[#F6A6B8]/40 flex items-center gap-2.5">
-                <span className="text-2xl">🍓</span>
+              <div className="absolute top-2 left-2 sm:-top-3 sm:-left-3 bg-white/95 backdrop-blur-md p-2.5 sm:p-3 rounded-2xl shadow-lg border border-[#F6A6B8]/40 flex items-center gap-2 sm:gap-2.5 z-10">
+                <span className="text-xl sm:text-2xl">🍓</span>
                 <div>
-                  <p className="text-[11px] font-bold text-[#54281F]">Signature Scoop</p>
-                  <p className="text-[10px] text-[#E83E68] font-bold">10-14 Surprises</p>
+                  <p className="text-[10px] sm:text-[11px] font-bold text-[#54281F]">Signature Scoop</p>
+                  <p className="text-[9px] sm:text-[10px] text-[#E83E68] font-bold">10-14 Surprises</p>
                 </div>
               </div>
 
-              <div className="absolute -bottom-3 -right-3 bg-white/95 backdrop-blur-md p-3 rounded-2xl shadow-lg border border-[#F6A6B8]/40 flex items-center gap-2.5">
-                <span className="text-2xl">🎁</span>
+              <div className="absolute bottom-2 right-2 sm:-bottom-3 sm:-right-3 bg-white/95 backdrop-blur-md p-2.5 sm:p-3 rounded-2xl shadow-lg border border-[#F6A6B8]/40 flex items-center gap-2 sm:gap-2.5 z-10">
+                <span className="text-xl sm:text-2xl">🎁</span>
                 <div>
-                  <p className="text-[11px] font-bold text-[#54281F]">Double Value</p>
-                  <p className="text-[10px] text-[#4E8B3A] font-bold">₹1,500+ Guaranteed</p>
+                  <p className="text-[10px] sm:text-[11px] font-bold text-[#54281F]">Double Value</p>
+                  <p className="text-[9px] sm:text-[10px] text-[#4E8B3A] font-bold">₹1,500+ Guaranteed</p>
                 </div>
               </div>
             </div>

@@ -1,7 +1,14 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import { Fredoka, Poppins } from 'next/font/google';
 import './globals.css';
 import { CustomerLayoutShell } from '@/components/layout/CustomerLayoutShell';
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 5,
+  themeColor: '#FFF8F2',
+};
 
 const fredoka = Fredoka({
   subsets: ['latin'],
