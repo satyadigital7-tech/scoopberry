@@ -391,6 +391,72 @@ export default function ProductDetailPage() {
                 <span className="text-[10px] text-[#8C6A64]">Transit Protection</span>
               </div>
             </div>
+
+            {/* Real Scoop Policies: Unboxing Rule, Video Sequence & Separate Packaging */}
+            <div className="mt-6 space-y-3.5">
+              {/* 1. Unboxing Rule */}
+              <div className="p-4 rounded-2xl bg-gradient-to-r from-[#FFF0E5] to-[#FDF2F4] border-2 border-[#E83E68]/30 text-xs">
+                <div className="flex items-start gap-2.5">
+                  <span className="text-base">🎥</span>
+                  <div>
+                    <h4 className="font-heading font-bold text-[#E83E68]">
+                      Unboxing Rule (Important)
+                    </h4>
+                    <p className="font-semibold text-[#54281F] mt-0.5">
+                      Please make a proper unboxing video 📸
+                    </p>
+                    <p className="text-[11px] text-[#8C6A64]">
+                      (Start from sealed package without cuts)
+                    </p>
+                    <p className="text-[11px] font-bold text-[#E83E68] mt-1">
+                      👉 Without unboxing video, no claims will be accepted
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* 2. Video Update */}
+              <div className="p-4 rounded-2xl bg-[#FFF8F2] border border-[#F6A6B8]/40 text-xs">
+                <div className="flex items-start gap-2.5">
+                  <span className="text-base">✨</span>
+                  <div>
+                    <h4 className="font-heading font-bold text-[#54281F]">
+                      VIDEO UPDATE – PLEASE READ
+                    </h4>
+                    <p className="text-[#54281F] mt-0.5 leading-relaxed">
+                      If you order now, your order number will be above <b>#300</b>, so your packing video will take time to be uploaded as videos are posted in order sequence.
+                    </p>
+                    <p className="text-[#8C6A64] text-[11px] mt-1">
+                      ✨ You can check our Instagram to see which order number is currently being uploaded.
+                    </p>
+                    <p className="text-[#E83E68] font-semibold text-[11px] mt-1">
+                      Need it early? We can share your raw packing video on request. 💖
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* 3. Separate Packaging */}
+              <div className="p-4 rounded-2xl bg-white border border-[#F6A6B8]/40 text-xs">
+                <div className="flex items-start gap-2.5">
+                  <span className="text-base">📦</span>
+                  <div>
+                    <h4 className="font-heading font-bold text-[#54281F]">
+                      Separate Packaging & Shipping Charges
+                    </h4>
+                    <p className="text-[#54281F] mt-0.5 leading-relaxed">
+                      If you order more than one Scoop and would like each Scoop to be packed in a separate box, an additional <b>₹150 shipping charge per extra box</b> will apply.
+                    </p>
+                    <p className="text-[#8C6A64] text-[11px] mt-1">
+                      Since our website does not allow us to add separate shipping charges for multiple boxes, we will contact you after receiving your order to inform you about the additional shipping charges.
+                    </p>
+                    <p className="text-[#166534] bg-[#F0FDF4] p-2 rounded-xl text-[11px] font-semibold mt-1.5 border border-[#86EFAC]">
+                      ✨ If you are okay with all Scoops being packed together in one box, <b>no extra shipping charges will be applicable</b>.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

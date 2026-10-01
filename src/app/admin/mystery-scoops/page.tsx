@@ -17,7 +17,7 @@ export default function AdminMysteryScoopsPage() {
     description: '',
     price: 799,
     mrp: 1299,
-    scoopTier: 'Standard' as 'Mini' | 'Standard' | 'Deluxe' | 'Mega',
+    scoopTier: 'Mini' as 'Mini' | 'Magic' | 'Standard' | 'Deluxe' | 'Mega',
     itemCount: '10 - 14 Items',
     guaranteedValue: '₹1,500+ Value Guaranteed',
     potentialTypes: 'Plush Keychain, Pastel Highlighters, Cute Stickers, Enamel Pin',
@@ -248,10 +248,11 @@ export default function AdminMysteryScoopsPage() {
                     }
                     className="w-full px-3 py-2 rounded-xl border border-slate-200 bg-white"
                   >
-                    <option value="Mini">Mini (5-7 Items)</option>
+                    <option value="Mini">Mini (8-10 Items)</option>
+                    <option value="Magic">Magic (15-20 Items)</option>
+                    <option value="Mega">Mega (25-30 Items)</option>
                     <option value="Standard">Standard (10-14 Items)</option>
                     <option value="Deluxe">Deluxe (18-22 Items)</option>
-                    <option value="Mega">Mega (25+ Items)</option>
                   </select>
                 </div>
                 <div>

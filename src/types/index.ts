@@ -19,7 +19,7 @@ export interface Product {
   isNewArrival?: boolean;
   isFeatured?: boolean;
   isMystery?: boolean;
-  mysteryTier?: 'Mini' | 'Standard' | 'Deluxe' | 'Mega';
+  mysteryTier?: 'Mini' | 'Magic' | 'Standard' | 'Deluxe' | 'Mega';
   mysteryItemCount?: string;
   mysteryPotentialTypes?: string[];
   includes?: string[];
@@ -36,7 +36,7 @@ export interface MysteryScoop {
   description: string;
   price: number;
   mrp: number;
-  scoopTier: 'Mini' | 'Standard' | 'Deluxe' | 'Mega';
+  scoopTier: 'Mini' | 'Magic' | 'Standard' | 'Deluxe' | 'Mega';
   itemCount: string;
   guaranteedValue: string;
   potentialTypes: string[];

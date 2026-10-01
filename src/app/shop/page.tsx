@@ -140,6 +140,30 @@ function ShopContent() {
             </div>
           </div>
         </div>
+
+        {/* Quick Filter Pills (matches client screenshot) */}
+        <div className="flex items-center gap-2.5 mt-4 overflow-x-auto pb-1">
+          <button
+            onClick={() => setSelectedCategory('all')}
+            className={`px-5 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all duration-200 whitespace-nowrap ${
+              selectedCategory === 'all'
+                ? 'bg-black text-white shadow-sm'
+                : 'bg-[#F2F2F2] text-[#4A4A4A] hover:bg-[#E5E5E5]'
+            }`}
+          >
+            All Products
+          </button>
+          <button
+            onClick={() => setSelectedCategory('mystery-scoops')}
+            className={`px-5 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all duration-200 whitespace-nowrap ${
+              selectedCategory === 'mystery-scoops'
+                ? 'bg-black text-white shadow-sm'
+                : 'bg-[#F2F2F2] text-[#4A4A4A] hover:bg-[#E5E5E5]'
+            }`}
+          >
+            Mystery Scoops
+          </button>
+        </div>
       </div>
 
       {/* Main Grid: Sidebar Filters + Products */}

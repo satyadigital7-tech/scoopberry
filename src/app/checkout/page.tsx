@@ -864,6 +864,28 @@ export default function CheckoutPage() {
                   ))}
                 </div>
 
+                {/* Important Packaging & Unboxing Rule Notice */}
+                <div className="space-y-3">
+                  <div className="p-3.5 bg-[#F0FDF4] rounded-2xl border border-[#86EFAC] text-xs text-[#166534]">
+                    <p className="font-bold flex items-center gap-1.5 mb-1">
+                      <span>📦 Separate Packaging & Shipping Note</span>
+                    </p>
+                    <p className="leading-relaxed">
+                      All Scoops in this order are packed together in one box at <b>no extra shipping charge</b>.
+                      If you would like each Scoop packed in a separate box, an additional ₹150 shipping per extra box applies (we will contact you after receiving your order).
+                    </p>
+                  </div>
+
+                  <div className="p-3.5 bg-[#FFF0E5] rounded-2xl border border-[#F6A6B8]/40 text-xs text-[#54281F]">
+                    <p className="font-bold text-[#E83E68] flex items-center gap-1.5 mb-1">
+                      <span>🎥 Mandatory Unboxing Video Reminder</span>
+                    </p>
+                    <p className="leading-relaxed">
+                      Please make a continuous, uncut unboxing video starting from the sealed outer package. Without an unboxing video, no claims or replacements can be accepted.
+                    </p>
+                  </div>
+                </div>
+
                 <div className="pt-4 flex flex-col-reverse sm:flex-row justify-between gap-3">
                   <button
                     onClick={() => setCurrentStep(2)}
