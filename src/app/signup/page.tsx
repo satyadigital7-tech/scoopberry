@@ -1,0 +1,168 @@
+'use client';
+
+import React, { useState } from 'react';
+import Link from 'next/link';
+import { useRouter } from 'next/navigation';
+import { useAuthStore } from '@/lib/store/useAuthStore';
+import { Logo } from '@/components/common/Logo';
+import { ArrowRight, Lock, Mail, User } from 'lucide-react';
+
+export default function SignupPage() {
+  const router = useRouter();
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const { signup, loginWithGoogle, isLoading, error, clearError } = useAuthStore();
+
+  const handleSignup = async (e: React.FormEvent) => {
+    e.preventDefault();
+    clearError();
+    const res = await signup(name, email, password);
+    if (res.success) {
+      router.push('/account');
+    }
+  };
+
+  const handleGoogleSignIn = async () => {
+    clearError();
+    const res = await loginWithGoogle();
+    if (res.success) {
+      router.push('/account');
+    }
+  };
+
+  return (
+    <div className="min-h-[80vh] flex items-center justify-center px-4 py-12">
+      <div className="w-full max-w-md bg-white rounded-3xl p-8 border border-[#F6A6B8]/30 cute-shadow">
+        <div className="text-center mb-8">
+          <div className="inline-block mb-3">
+            <Logo size="md" />
+          </div>
+          <h1 className="font-heading font-bold text-2xl text-[#54281F]">
+            Join the Scoop Club! 🍓
+          </h1>
+          <p className="text-xs text-[#8C6A64] mt-1">
+            Create an account to save wishlist, track parcels, and earn rewards
+          </p>
+        </div>
+
+        {error && (
+          <div className="mb-4 p-3 bg-red-50 border border-red-200 text-red-600 rounded-2xl text-xs font-medium">
+            {error}
+          </div>
+        )}
+
+        <form onSubmit={handleSignup} className="space-y-4">
+          <div>
+            <label className="block text-xs font-bold text-[#54281F] mb-1">
+              Your Name
+            </label>
+            <div className="relative">
+              <input
+                type="text"
+                required
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                placeholder="e.g. Radhika Sharma"
+                className="w-full pl-10 pr-4 py-3 text-xs rounded-2xl border border-[#F6A6B8]/40 focus:outline-none focus:border-[#E83E68]"
+              />
+              <User className="w-4 h-4 text-gray-400 absolute left-3.5 top-3.5" />
+            </div>
+          </div>
+
+          <div>
+            <label className="block text-xs font-bold text-[#54281F] mb-1">
+              Email Address
+            </label>
+            <div className="relative">
+              <input
+                type="email"
+                required
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="you@example.com"
+                className="w-full pl-10 pr-4 py-3 text-xs rounded-2xl border border-[#F6A6B8]/40 focus:outline-none focus:border-[#E83E68]"
+              />
+              <Mail className="w-4 h-4 text-gray-400 absolute left-3.5 top-3.5" />
+            </div>
+          </div>
+
+          <div>
+            <label className="block text-xs font-bold text-[#54281F] mb-1">
+              Password
+            </label>
+            <div className="relative">
+              <input
+                type="password"
+                required
+                minLength={6}
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                placeholder="Minimum 6 characters"
+                className="w-full pl-10 pr-4 py-3 text-xs rounded-2xl border border-[#F6A6B8]/40 focus:outline-none focus:border-[#E83E68]"
+              />
+              <Lock className="w-4 h-4 text-gray-400 absolute left-3.5 top-3.5" />
+            </div>
+          </div>
+
+          <button
+            type="submit"
+            disabled={isLoading}
+            className="w-full py-3.5 rounded-2xl bg-[#E83E68] hover:bg-[#d63059] text-white text-xs font-bold shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2 active:scale-95 disabled:opacity-50"
+          >
+            {isLoading ? (
+              <span>Creating Account...</span>
+            ) : (
+              <>
+                <span>Create Account</span>
+                <ArrowRight className="w-4 h-4" />
+              </>
+            )}
+          </button>
+        </form>
+
+        <div className="relative my-6 text-center">
+          <div className="absolute inset-0 flex items-center">
+            <div className="w-full border-t border-gray-100" />
+          </div>
+          <span className="relative bg-white px-3 text-[11px] text-gray-400 font-medium">
+            or signup with
+          </span>
+        </div>
+
+        <button
+          onClick={handleGoogleSignIn}
+          type="button"
+          className="w-full py-3 rounded-2xl bg-[#FFF8F2] border border-[#F6A6B8]/40 hover:bg-[#FFE5D9] text-[#54281F] text-xs font-bold flex items-center justify-center gap-2 transition-all"
+        >
+          <svg className="w-4 h-4" viewBox="0 0 24 24">
+            <path
+              fill="#4285F4"
+              d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+            />
+            <path
+              fill="#34A853"
+              d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+            />
+            <path
+              fill="#FBBC05"
+              d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"
+            />
+            <path
+              fill="#EA4335"
+              d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"
+            />
+          </svg>
+          <span>Continue with Google</span>
+        </button>
+
+        <p className="mt-6 text-center text-xs text-[#8C6A64]">
+          Already have an account?{' '}
+          <Link href="/login" className="text-[#E83E68] font-bold hover:underline">
+            Sign In
+          </Link>
+        </p>
+      </div>
+    </div>
+  );
+}
